@@ -1,5 +1,6 @@
-import React from "react";
-import Button from "../src/components/Button";
+import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
+import style from "./App.css";
 
 const App = () => {
 	const [value, setValue] = React.useState("");
@@ -7,12 +8,20 @@ const App = () => {
 		{
 			name: "buy milk",
 			isChecked: false,
+			id: uuid(),
 		},
 	]);
+
 	return (
-		<div>
-			<h1>{value}</h1>
-			<div>
+		<div className="todo_list">
+			<h1>To-Do List</h1>
+			<form
+				onSubmit={event_ => {
+					event_.preventDefault();
+					setTodos([...todos, { name: value, isChecked: false, id: uuid() }]);
+					setValue("");
+				}}
+			>
 				<input
 					type="text"
 					value={value}
@@ -20,20 +29,14 @@ const App = () => {
 						setValue(event_.target.value);
 					}}
 				/>
-				<button
-					disabled={!value}
-					onClick={() => {
-						setTodos([...todos, { name: value, isChecked: false }]);
-						setValue("");
-					}}
-				>
+				<button disabled={!value} type="submit">
 					Add
 				</button>
-			</div>
+			</form>
 			<ul>
 				{todos.map((todo, index) => {
 					return (
-						<li key={index} style={{ userSelect: "none" }}>
+						<li key={todo.id} style={{ userSelect: "none" }}>
 							<label>
 								<input
 									type="checkbox"

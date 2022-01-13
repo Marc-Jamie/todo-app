@@ -1,0 +1,13 @@
+.todo_list {
+	display: flex;
+	background-color: beige;
+	height: 40vh;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	border: solid 2px;
+}
+
+.todo_list--list {
+	list-style: none;
+}

@@ -4,15 +4,16 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "spj": "npx sort-package-json@1.48 package.json",
     "dev": "react-scripts start",
+    "spj": "npx sort-package-json@1.48 package.json",
     "stylelint": "stylelint 'src/*.{js,jsx}'"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@stylelint/postcss-css-in-js": "^0.37.2",
