@@ -12,5 +12,5 @@ app.get("/api/todos", req, res => {
 });
 
 app.listen(port, () => {
-	console.log(`Hello World! ${port}`);
+	console.log(`Server läuft unter: ${port}`);
 });
