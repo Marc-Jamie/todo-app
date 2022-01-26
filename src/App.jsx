@@ -42,7 +42,7 @@ const App = () => {
 									type="checkbox"
 									checked={todo.isChecked}
 									onChange={() => {
-										console.log(`Item: ${index + 1}`);
+										console.log(`Item: ${todo.id}`);
 										const update = [...todos];
 										update[index].isChecked = !update[index].isChecked;
 										setTodos(update);
