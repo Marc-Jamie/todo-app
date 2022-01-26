@@ -1,21 +1,16 @@
-import fs from "fs/promises";
 import express from "express";
-import { parse } from "path";
 
 const app = express();
 const port = 3005;
 
 app.get("/", (req, res) => {
 	res.send("Hello World!");
-	// .then(res => {
-	// 	return JSON.parse.res;
-	// });
+});
+
+app.get("/api/todos", req, res => {
+	res.json([{ id: 1, name: "clean" }]);
 });
 
 app.listen(port, () => {
 	console.log(`Hello World! ${port}`);
 });
-
-// app.put('/api/todos', function (req, res) {
-// 	res.send('Got a PUT request at /user')
-//   })

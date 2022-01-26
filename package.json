@@ -7,6 +7,7 @@
     "build": "react-scripts build",
     "dev": "react-scripts start",
     "dev-server": "nodemon server.js",
+    "server": "node server-js",
     "spj": "npx sort-package-json@1.48 package.json",
     "stylelint": "stylelint 'src/*.{js,jsx}'"
   },
